@@ -1,6 +1,26 @@
+<script lang="ts" context="module">
+	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
+	export async function load({ page }: LoadInput): Promise<LoadOutput> {
+		if (page.query.has('q')) {
+			return {
+				props: { query: page.query.get('q') }
+			};
+		} else {
+			return {
+				redirect: '/',
+				status: 303
+			};
+		}
+	}
+</script>
+
+<script lang="ts">
+	export let query: string;
+</script>
+
 <div class="bg-gray-100 py-4 mb-4">
 	<div class="flex justify-between max-w-3xl mx-auto">
-		<p class="font-semibold">Search results for <span class="italic">adventure</span></p>
+		<p class="font-semibold">Search results for <span class="italic">{query}</span></p>
 		<p>28 results</p>
 	</div>
 </div>
