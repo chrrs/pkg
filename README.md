@@ -1,38 +1,31 @@
-# create-svelte
+<center><img src="https://github.com/SlagHoedje/pkg/blob/master/static/logo.svg?raw=true" height="50" /></center>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+> Easy-to-use common maven repository index.
 
-## Creating a project
+![Version](https://img.shields.io/github/package-json/v/SlagHoedje/pkg?style=flat-square)
+![Lints](https://img.shields.io/github/checks-status/SlagHoedje/pkg/master?style=flat-square)
+![Deployment](https://img.shields.io/badge/hosted%20on-vercel-black?style=flat-square)
 
-If you're seeing this, you've probably already done this step. Congrats!
+Finding maven packages is hard. Sure, sites like [mvnrepository](https://mvnrepository.com) and the official [maven search](https://search.maven.org) exist, but all of them are either very messy, or don't provide enough information. That's why I decided to build my own repository explorer.
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+## Deployment
 
-# create a new project in my-app
-npm init svelte@next my-app
+As this is a SvelteKit project, you might need to add your own [adapters](https://kit.svelte.dev/docs#adapters) to the Svelte config.
+
+```sh
+yarn
+yarn build
 ```
 
-> Note: the `@next` is temporary
+## Development setup
 
-## Developing
+After starting the development server, the endpoint is logged in the terminal. Navigating to this URL will put you on the homepage.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```sh
+yarn
+yarn dev
 ```
 
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+## Credits
+- [lib.rs](https://lib.rs/), [mvnrepository](https://mvnrepository.com), [Maven Search](https://search.maven.org) and [npm](https://npmjs.org) for general inspiration of this site.
+- [JetBrains package-search](https://package-search.jetbrains.org) for providing the API.
