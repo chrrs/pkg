@@ -6,7 +6,7 @@
 				class="flex-grow bg-gray-100 px-4 py-2 border-2 border-r-0 border-transparent focus:border-black focus:outline-none"
 				placeholder="Search maven artifacts..."
 			/>
-			<button class="bg-black text-white px-6 font-semibold">Search</button>
+			<button class="bg-black text-white px-6 font-bold">Search</button>
 		</div>
 	</div>
 </div>
