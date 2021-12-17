@@ -3,12 +3,12 @@
 	export async function load({ page }: LoadInput): Promise<LoadOutput> {
 		if (page.query.has('q')) {
 			return {
-				props: { query: page.query.get('q') }
+				props: { query: page.query.get('q') },
 			};
 		} else {
 			return {
 				redirect: '/',
-				status: 303
+				status: 303,
 			};
 		}
 	}

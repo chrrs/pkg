@@ -6,8 +6,8 @@ import path from 'path';
 const config = {
 	preprocess: [
 		preprocess({
-			postcss: true
-		})
+			postcss: true,
+		}),
 	],
 
 	kit: {
@@ -18,11 +18,11 @@ const config = {
 			resolve: {
 				alias: {
 					$lib: path.resolve('./src/lib'),
-					$components: path.resolve('./src/components')
-				}
-			}
-		}
-	}
+					$components: path.resolve('./src/components'),
+				},
+			},
+		},
+	},
 };
 
 export default config;
