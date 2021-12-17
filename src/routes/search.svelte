@@ -46,9 +46,11 @@
 <div class="max-w-[50rem] mx-auto">
 	{#each results.results as result}
 		<a href="/pkg/{result.group}:{result.artifact}" class="block hover:bg-gray-100 px-4 py-4">
-			<p class="text-lg flex gap-4 mb-1">
-				<span class="font-semibold text-purple-700">{result.name}</span>
-				{#if result.description}<span>{result.description}</span>{/if}
+			<p class="text-lg mb-1">
+				<span class="font-semibold text-purple-700 mr-3">{result.name}</span>
+				{#if result.description}
+					<span>{result.description}</span>
+				{/if}
 			</p>
 			<p class="text-sm text-gray-500 flex gap-4">
 				<span class="text-gray-800">{result.group}:{result.artifact}</span>
