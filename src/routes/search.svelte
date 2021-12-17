@@ -18,6 +18,10 @@
 	export let query: string;
 </script>
 
+<svelte:head>
+	<title>{query} - pkg</title>
+</svelte:head>
+
 <div class="bg-gray-100 py-4 mb-4">
 	<div class="flex justify-between max-w-3xl mx-auto">
 		<p class="font-semibold">Search results for <span class="italic">{query}</span></p>
