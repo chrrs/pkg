@@ -4,8 +4,6 @@
 	import '../app.css';
 </script>
 
-<div class="w-screen h-screen">
-	<Nav />
+<Nav />
 
-	<slot />
-</div>
+<slot />
