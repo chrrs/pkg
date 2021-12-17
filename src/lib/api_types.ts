@@ -13,5 +13,5 @@ export interface SearchResult {
 	group: string;
 	artifact: string;
 	version: string;
-	lastUpdated: string;
+	lastUpdated: number;
 }
