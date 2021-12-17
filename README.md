@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/github/package-json/v/SlagHoedje/pkg?style=flat-square)
 ![Lints](https://img.shields.io/github/checks-status/SlagHoedje/pkg/master?style=flat-square)
-![Deployment](https://img.shields.io/badge/hosted%20on-vercel-black?style=flat-square)
+![Deployment](https://img.shields.io/badge/deployed%20on-vercel-black?style=flat-square)
 
 Finding maven packages is hard. Sure, sites like [mvnrepository](https://mvnrepository.com) and the official [maven search](https://search.maven.org) exist, but all of them are either very messy, or don't provide enough information. That's why I decided to build my own repository explorer.
 
@@ -29,4 +29,4 @@ yarn dev
 ## Credits
 
 -   [lib.rs](https://lib.rs/), [mvnrepository](https://mvnrepository.com), [Maven Search](https://search.maven.org) and [npm](https://npmjs.org) for general inspiration of this site.
--   [JetBrains package-search](https://package-search.jetbrains.org) for providing the API.
+-   [JetBrains package-search](https://package-search.jetbrains.com/) for providing the API.
