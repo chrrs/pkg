@@ -27,5 +27,6 @@ yarn dev
 ```
 
 ## Credits
-- [lib.rs](https://lib.rs/), [mvnrepository](https://mvnrepository.com), [Maven Search](https://search.maven.org) and [npm](https://npmjs.org) for general inspiration of this site.
-- [JetBrains package-search](https://package-search.jetbrains.org) for providing the API.
+
+-   [lib.rs](https://lib.rs/), [mvnrepository](https://mvnrepository.com), [Maven Search](https://search.maven.org) and [npm](https://npmjs.org) for general inspiration of this site.
+-   [JetBrains package-search](https://package-search.jetbrains.org) for providing the API.
