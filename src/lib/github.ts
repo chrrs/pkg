@@ -13,7 +13,9 @@ export async function getContent(contentUrl: string): Promise<string | undefined
 }
 
 export async function getReadme(baseUrl: string): Promise<string | undefined> {
-	const res = await fetch(`${baseUrl}/blob/master/README.md?raw=true`);
+	const res = await fetch(
+		`${baseUrl.replace('github.com', 'raw.githubusercontent.com')}/master/README.md`
+	);
 
 	if (res.status != 404) {
 		return await res.text();
