@@ -15,3 +15,11 @@ export interface SearchResult {
 	version: string;
 	lastUpdated: number;
 }
+
+export interface Package {
+	name: string;
+	description?: string;
+	group: string;
+	artifact: string;
+	repository?: string;
+}
