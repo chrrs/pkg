@@ -18,12 +18,12 @@
 
 <script lang="ts">
 	import type { ApiError, Package } from '$lib/api_types';
-	import { sanitize } from 'isomorphic-dompurify';
+	import xss from 'xss';
 	import { marked } from 'marked';
 
 	export let pack: Package;
 
-	$: readmeHtml = pack.readme && sanitize(marked(pack.readme));
+	$: readmeHtml = pack.readme && xss(marked(pack.readme));
 </script>
 
 <div class="bg-gray-100 mb-4">
