@@ -1,13 +1,6 @@
 import type { EndpointOutput, IncomingRequest } from '@sveltejs/kit';
 import type { Rec } from '@sveltejs/kit/types/helper';
-
-async function getReadme(contentUrl: string): Promise<string | undefined> {
-	const res = await fetch(contentUrl).then((res) => res.json());
-
-	if (res.content) {
-		return Buffer.from(res.content, res.encoding).toString('ascii');
-	}
-}
+import { getContent, getReadme } from '$lib/github';
 
 export async function get({
 	params,
@@ -24,8 +17,10 @@ export async function get({
 			};
 		}
 
-		// TODO: This URL is annoyingly rate-limited
 		const readmeContentUrl = res.package.github?.community_profile?.files?.readme?.url;
+		const readme =
+			(res.package.scm && (await getReadme(res.package.scm?.url))) ??
+			(readmeContentUrl && (await getContent(readmeContentUrl)));
 
 		return {
 			body: {
@@ -34,7 +29,7 @@ export async function get({
 				group: res.package.group_id,
 				artifact: res.package.artifact_id,
 				repository: res.package.scm?.url,
-				readme: readmeContentUrl && (await getReadme(readmeContentUrl)),
+				readme,
 			},
 		};
 	} catch (e) {
