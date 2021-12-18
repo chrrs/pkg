@@ -22,4 +22,5 @@ export interface Package {
 	group: string;
 	artifact: string;
 	repository?: string;
+	readme?: string;
 }
