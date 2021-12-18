@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"canvas": "^2.8.0",
 		"date-fns": "^2.27.0",
 		"dompurify": "^2.3.4",
 		"isomorphic-dompurify": "^0.17.0",
