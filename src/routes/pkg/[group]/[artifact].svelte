@@ -131,6 +131,10 @@
 			}
 		}
 
+		& > ul {
+			@apply mb-4;
+		}
+
 		pre {
 			@apply bg-gray-100 px-4 py-2 mb-4 overflow-y-auto;
 		}
