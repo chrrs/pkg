@@ -101,23 +101,23 @@
 		}
 
 		p {
-			@apply py-2;
+			@apply pb-4;
 		}
 
 		h1 {
-			@apply font-semibold text-3xl pb-2 border-b-2 border-gray-100 mt-4;
+			@apply font-semibold text-3xl pb-2 mb-2 border-b-2 border-gray-100 mt-4;
 		}
 
 		h2 {
-			@apply font-semibold text-2xl pb-2 border-b-2 border-gray-100 mt-4;
+			@apply font-semibold text-2xl pb-2 my-2 border-b-2 border-gray-100;
 		}
 
 		h3 {
-			@apply font-semibold text-xl mb-1 mt-4;
+			@apply font-semibold text-xl my-2;
 		}
 
 		h4 {
-			@apply font-semibold mt-4 mb-1;
+			@apply font-semibold my-2;
 		}
 
 		ul {
@@ -132,7 +132,7 @@
 		}
 
 		pre {
-			@apply bg-gray-100 px-4 py-2 mb-1 overflow-y-auto;
+			@apply bg-gray-100 px-4 py-2 mb-4 overflow-y-auto;
 		}
 
 		hr {
