@@ -17,10 +17,14 @@ export async function get({
 			};
 		}
 
-		const readmeContentUrl = res.package.github?.community_profile?.files?.readme?.url;
-		const readme =
-			(res.package.scm && (await getReadme(res.package.scm?.url))) ??
-			(readmeContentUrl && (await getContent(readmeContentUrl)));
+		let readme;
+
+		if (res.package.scm?.url?.startsWith('https://github.com/')) {
+			const readmeContentUrl = res.package.github?.community_profile?.files?.readme?.url;
+			readme =
+				(res.package.scm && (await getReadme(res.package.scm?.url))) ??
+				(readmeContentUrl && (await getContent(readmeContentUrl)));
+		}
 
 		return {
 			body: {
