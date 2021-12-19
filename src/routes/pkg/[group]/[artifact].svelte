@@ -1,17 +1,20 @@
 <script lang="ts" context="module">
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
 	export async function load({ page, fetch }: LoadInput): Promise<LoadOutput> {
-		const res = (await fetch(`/api/pkg/${page.params.group}/${page.params.artifact}`).then(
-			(res) => res.json()
-		)) as Package & ApiError;
+		const res = await fetch(`/api/pkg/${page.params.group}/${page.params.artifact}`);
+		const json = (await res.json()) as Package & ApiError;
 
-		if (res.error) {
-			// TODO: Handle this more gracefully.
-			throw res.error;
+		if (res.status == 404) {
+			return {
+				status: 404,
+				error: `No artifact named ${page.params.group}:${page.params.artifact} found.`,
+			};
+		} else if (json.error) {
+			throw json.error;
 		}
 
 		return {
-			props: { pack: res },
+			props: { pack: json },
 		};
 	}
 </script>

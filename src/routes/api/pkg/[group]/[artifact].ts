@@ -8,31 +8,37 @@ export async function get({
 	try {
 		const res = await fetch(
 			`https://package-search.services.jetbrains.com/api/package/${params.group}:${params.artifact}`
-		).then((res) => res.json());
+		);
+		const json = await res.json();
 
-		if (res.error) {
+		if (res.status === 404) {
+			return {
+				status: 404,
+				body: { error: json.error.message },
+			};
+		} else if (json.error) {
 			return {
 				status: 500,
-				body: { error: res.error.message },
+				body: { error: json.error.message },
 			};
 		}
 
 		let readme;
 
-		if (res.package.scm?.url?.startsWith('https://github.com/')) {
-			const readmeContentUrl = res.package.github?.community_profile?.files?.readme?.url;
+		if (json.package.scm?.url?.startsWith('https://github.com/')) {
+			const readmeContentUrl = json.package.github?.community_profile?.files?.readme?.url;
 			readme =
-				(res.package.scm && (await getReadme(res.package.scm?.url))) ??
+				(json.package.scm && (await getReadme(json.package.scm?.url))) ??
 				(readmeContentUrl && (await getContent(readmeContentUrl)));
 		}
 
 		return {
 			body: {
-				name: res.package.name,
-				description: res.package.github?.description ?? res.package.description,
-				group: res.package.group_id,
-				artifact: res.package.artifact_id,
-				repository: res.package.scm?.url,
+				name: json.package.name,
+				description: json.package.github?.description ?? json.package.description,
+				group: json.package.group_id,
+				artifact: json.package.artifact_id,
+				repository: json.package.scm?.url,
 				readme,
 			},
 		};
