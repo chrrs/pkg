@@ -20,6 +20,7 @@
 	import type { ApiError, Package } from '$lib/api_types';
 	import xss from 'xss';
 	import { marked } from 'marked';
+	import Alert from '$components/Alert.svelte';
 
 	export let pack: Package;
 
@@ -45,11 +46,13 @@
 	</div>
 </div>
 
-{#if readmeHtml}
-	<article class="max-w-3xl mx-auto mb-8">{@html readmeHtml}</article>
-{:else}
-	TODO: Put something better here
-{/if}
+<div class="max-w-3xl mx-auto mb-8">
+	{#if readmeHtml}
+		<article>{@html readmeHtml}</article>
+	{:else}
+		<Alert type="warning">No README available.</Alert>
+	{/if}
+</div>
 
 <style global lang="postcss">
 	article {
