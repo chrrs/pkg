@@ -62,16 +62,16 @@
 		p,
 		li {
 			a {
-				&::before {
-					content: '';
-					@apply absolute bottom-0 left-0 w-full h-0.5 -z-10 bg-purple-200 transition-colors;
+				&:hover {
+					background: linear-gradient(
+						180deg,
+						transparent 90%,
+						theme('colors.purple.400') 0
+					);
 				}
 
-				&:hover::before {
-					@apply bg-purple-400;
-				}
-
-				@apply relative font-semibold;
+				@apply font-semibold;
+				background: linear-gradient(180deg, transparent 90%, theme('colors.purple.200') 0);
 			}
 
 			strong,
