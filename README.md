@@ -17,6 +17,9 @@ yarn
 yarn build
 ```
 
+As the GitHub API is used in this project, without authentication, the API is rate-limited to 60 requests _per hour_. As this is quite low, there is support for manually adding
+a GitHub OAuth token by setting the `GITHUB_TOKEN` environment variable to the desired OAuth token. This can of course also be done by using a `.env` file.
+
 ## Development setup
 
 After starting the development server, the endpoint is logged in the terminal. Navigating to this URL will put you on the homepage.
