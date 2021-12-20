@@ -10,7 +10,7 @@
 </script>
 
 <div class="py-4 bg-white">
-	<div class="flex items-center gap-8 max-w-3xl mx-auto">
+	<div class="flex items-center gap-8 container">
 		<a href="/">
 			<img src="/logo.svg" alt="pkg" class="h-8" />
 		</a>

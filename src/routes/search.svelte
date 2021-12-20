@@ -37,12 +37,13 @@
 </svelte:head>
 
 <div class="bg-gray-100 py-4 mb-4">
-	<div class="flex justify-between max-w-3xl mx-auto">
+	<div class="flex justify-between container">
 		<p class="font-semibold">Search results for <span class="italic">{query}</span></p>
 		<p>{results.amount} results</p>
 	</div>
 </div>
 
+<!-- TODO: Fix this alignment -->
 <div class="max-w-[50rem] mx-auto">
 	{#each results.results as result}
 		<a href="/pkg/{result.group}/{result.artifact}" class="block hover:bg-gray-100 px-4 py-4">

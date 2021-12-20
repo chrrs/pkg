@@ -31,7 +31,7 @@
 </script>
 
 <div class="bg-gray-100 mb-4">
-	<div class="max-w-3xl mx-auto">
+	<div class="container">
 		<div class="py-4">
 			<h1 class="text-3xl font-bold mb-2">{pack.name}</h1>
 			<p class="text-gray-700">{pack.description}</p>
@@ -49,7 +49,7 @@
 	</div>
 </div>
 
-<div class="max-w-3xl mx-auto mb-8">
+<div class="container mb-8">
 	{#if readmeHtml}
 		<article>{@html readmeHtml}</article>
 	{:else}
