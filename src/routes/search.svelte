@@ -48,7 +48,9 @@
 	{#each results.results as result}
 		<a href="/pkg/{result.group}/{result.artifact}" class="block hover:bg-gray-100 px-4 py-4">
 			<p class="text-lg mb-1">
-				<span class="font-semibold text-purple-700 mr-3">{result.name}</span>
+				<span class="font-semibold text-purple-700 mr-3">
+					{result.name ?? result.artifact}
+				</span>
 				{#if result.description}
 					<span>{result.description}</span>
 				{/if}

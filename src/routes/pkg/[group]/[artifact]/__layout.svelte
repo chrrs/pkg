@@ -46,8 +46,8 @@
 <div class="bg-gray-100 mb-4">
 	<div class="container">
 		<div class="py-4">
-			<h1 class="text-3xl font-bold mb-2">{pack.name}</h1>
 			<p class="text-gray-700">{pack.description}</p>
+			<h1 class="text-3xl font-bold mb-2">{pack.name ?? pack.artifact}</h1>
 		</div>
 		<div class="flex gap-4">
 			{#each pages as link}
