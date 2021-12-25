@@ -40,6 +40,16 @@ export async function get({
 				artifact: json.package.artifact_id,
 				repository: json.package.scm?.url,
 				readme,
+				latestVersion: {
+					name: json.package.latest_version.version,
+					updated: json.package.latest_version.last_changed,
+					stable: json.package.latest_version.stable,
+				},
+				versions: json.package.versions.map((ver) => ({
+					name: ver.version,
+					updated: ver.last_changed,
+					stable: ver.stable,
+				})),
 			},
 		};
 	} catch (e) {

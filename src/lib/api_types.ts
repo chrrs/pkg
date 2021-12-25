@@ -23,4 +23,12 @@ export interface Package {
 	artifact: string;
 	repository?: string;
 	readme?: string;
+	latestVersion: PackageVersion;
+	versions: PackageVersion[];
+}
+
+export interface PackageVersion {
+	name: string;
+	updated: number;
+	stable: boolean;
 }
