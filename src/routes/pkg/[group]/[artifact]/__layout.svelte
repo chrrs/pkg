@@ -39,6 +39,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>{pack.name} - pkg</title>
+</svelte:head>
+
 <div class="bg-gray-100 mb-4">
 	<div class="container">
 		<div class="py-4">

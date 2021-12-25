@@ -17,6 +17,10 @@
 	export let message: string;
 </script>
 
+<svelte:head>
+	<title>{status} - pkg</title>
+</svelte:head>
+
 <div class="max-w-3xl mx-auto mb-8">
 	<Alert type="error"
 		><b>Error {status}:</b>
