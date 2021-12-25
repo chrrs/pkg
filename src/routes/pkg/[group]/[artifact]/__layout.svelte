@@ -64,6 +64,11 @@
 					href={pack.repository}>Repository</a
 				>
 			{/if}
+			{#if pack.website}
+				<a class="inline-block text-gray-700 hover:underline px-4 py-1" href={pack.website}>
+					Website
+				</a>
+			{/if}
 		</div>
 	</div>
 </div>

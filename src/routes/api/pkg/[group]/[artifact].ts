@@ -38,6 +38,7 @@ export async function get({
 			body: {
 				name: json.package.name,
 				description: json.package.github?.description ?? json.package.description,
+				website: json.package.url,
 				group: json.package.group_id,
 				artifact: json.package.artifact_id,
 				repository: scm,

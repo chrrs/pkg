@@ -19,6 +19,7 @@ export interface SearchResult {
 export interface Package {
 	name: string;
 	description?: string;
+	website?: string;
 	group: string;
 	artifact: string;
 	repository?: string;
