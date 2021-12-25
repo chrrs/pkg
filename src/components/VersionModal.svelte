@@ -20,7 +20,7 @@
 	>
 		<div class="bg-white pointer-events-auto max-w-xl flex-grow">
 			<div class="bg-gray-100 px-4 py-2">
-				<p><span class="font-semibold">{pack.name}</span> v{version.name}</p>
+				<p><span class="font-semibold">{pack.artifact}</span> v{version.name}</p>
 			</div>
 			<div class="p-4">
 				{#if !version.stable}
