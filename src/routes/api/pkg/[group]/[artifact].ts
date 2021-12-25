@@ -25,7 +25,9 @@ export async function get({
 
 		let readme;
 
-		if (json.package.scm?.url?.startsWith('https://github.com/')) {
+		let scm = json.package.scm?.url;
+		if (scm?.startsWith('https://github.com/')) {
+			scm = scm?.split('/').slice(0, 5).join('/');
 			const readmeContentUrl = json.package.github?.community_profile?.files?.readme?.url;
 			readme =
 				(json.package.scm && (await getReadme(json.package.scm?.url))) ??
@@ -38,7 +40,7 @@ export async function get({
 				description: json.package.github?.description ?? json.package.description,
 				group: json.package.group_id,
 				artifact: json.package.artifact_id,
-				repository: json.package.scm?.url,
+				repository: scm,
 				readme,
 				latestVersion: {
 					name: json.package.latest_version.version,
