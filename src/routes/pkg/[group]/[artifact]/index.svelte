@@ -39,6 +39,10 @@
 					);
 				}
 
+				& > code:hover {
+					@apply underline;
+				}
+
 				@apply font-semibold;
 				background: linear-gradient(180deg, transparent 90%, theme('colors.purple.200') 0);
 			}
