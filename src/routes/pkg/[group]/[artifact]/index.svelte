@@ -49,7 +49,7 @@
 			}
 
 			code {
-				@apply bg-gray-100 text-red-600 px-2 py-0.5;
+				@apply bg-gray-50 text-red-600 px-2 py-0.5;
 			}
 
 			img {
@@ -105,7 +105,7 @@
 		}
 
 		pre {
-			@apply bg-gray-100 px-4 py-2 mb-4 overflow-y-auto;
+			@apply bg-gray-50 px-4 py-2 mb-4 overflow-y-auto;
 		}
 
 		hr {
