@@ -89,19 +89,25 @@
 			@apply font-semibold my-2;
 		}
 
-		ul {
+		& > ul,
+		& > ol {
 			li {
-				&::before {
-					content: '';
-					@apply absolute top-3 left-0 w-3 h-0.5 bg-gray-300;
-				}
-
+				counter-increment: list;
 				@apply relative my-1 pl-6;
 			}
+
+			counter-reset: list;
+			@apply mb-4;
 		}
 
-		& > ul {
-			@apply mb-4;
+		ul li::before {
+			content: '';
+			@apply absolute top-3 left-0 w-3 h-0.5 bg-gray-300;
+		}
+
+		ol li::before {
+			content: counter(list) '.';
+			@apply absolute left-0 text-gray-500;
 		}
 
 		pre {
