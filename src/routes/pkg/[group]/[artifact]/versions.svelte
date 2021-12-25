@@ -8,15 +8,20 @@
 </script>
 
 <script lang="ts">
+	import VersionModal from '$components/VersionModal.svelte';
 	import type { Package } from '$lib/api_types';
 	import { formatDistance } from 'date-fns';
+	import { openModal } from 'svelte-modals';
 
 	export let pack: Package;
 </script>
 
 <div class="max-w-[50rem] mx-auto mb-8">
 	{#each pack.versions as version}
-		<button class="w-full px-4 py-4 flex items-center gap-4 group hover:bg-gray-100">
+		<button
+			class="w-full px-4 py-4 flex items-center gap-4 group hover:bg-gray-100"
+			on:click={() => openModal(VersionModal, { pack, version })}
+		>
 			<p
 				class="text-lg font-semibold"
 				class:text-green-700={version.stable}

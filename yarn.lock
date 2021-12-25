@@ -2051,6 +2051,11 @@ svelte-hmr@^0.14.7:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.7.tgz#7fa8261c7b225d9409f0a86f3b9ea5c3ca6f6607"
   integrity sha512-pDrzgcWSoMaK6AJkBWkmgIsecW0GChxYZSZieIYfCP0v2oPyx2CYU/zm7TBIcjLVUPP714WxmViE9Thht4etog==
 
+svelte-modals@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/svelte-modals/-/svelte-modals-1.0.4.tgz#d1e7b2301f274417e03897ea6b76e3ddfb4be4fc"
+  integrity sha512-nwYEF7PlxX4uqKU1zRCi+fcECxlEOEFGNGcazdyGsFK0LMngrxwqq3q77xBabGNU7DXYxGyDXq/9YHzyHyCAFg==
+
 svelte-preprocess@^4.0.0, svelte-preprocess@^4.9.8:
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.10.1.tgz#5f435e8aaa82976165bc8f5fa690e2e5ba084760"

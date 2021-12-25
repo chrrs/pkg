@@ -21,6 +21,10 @@ const config = {
 					$components: path.resolve('./src/components'),
 				},
 			},
+
+			optimizeDeps: {
+				exclude: ['svelte-modals'],
+			},
 		},
 	},
 };
