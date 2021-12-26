@@ -29,7 +29,14 @@
 <style global lang="postcss">
 	article {
 		p,
-		li {
+		li,
+		table,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
 			a {
 				&:hover {
 					background: linear-gradient(
@@ -61,9 +68,22 @@
 			}
 		}
 
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			a,
+			strong,
+			b {
+				@apply font-bold;
+			}
+		}
+
 		table {
 			th {
-				@apply px-2 py-1 bg-gray-100;
+				@apply px-2 py-1 bg-gray-100 font-semibold;
 			}
 
 			td {
@@ -91,6 +111,10 @@
 
 		h4 {
 			@apply font-semibold my-2;
+		}
+
+		h5 {
+			@apply font-semibold text-sm;
 		}
 
 		& > ul,
