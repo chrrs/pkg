@@ -11,8 +11,8 @@
 
 <div class="py-4 bg-white">
 	<div class="flex items-center gap-8 container">
-		<a href="/">
-			<img src="/logo.svg" alt="pkg" class="h-8" />
+		<a href="/" class="hidden sm:block">
+			<img src="/logo.svg" height="100%" alt="pkg" class="h-8 min-w-fit" />
 		</a>
 		<form on:submit|preventDefault={search} class="flex flex-grow">
 			<input

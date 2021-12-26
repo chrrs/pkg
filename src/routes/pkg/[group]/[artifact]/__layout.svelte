@@ -49,7 +49,7 @@
 			<h1 class="text-3xl font-bold mb-2">{pack.name ?? pack.artifact}</h1>
 			{#if pack.description}<p class="text-gray-700">{pack.description}</p>{/if}
 		</div>
-		<div class="flex gap-4">
+		<div class="flex gap-4 overflow-x-auto">
 			{#each pages as link}
 				<a
 					class="inline-block px-4 py-1 {$page.path === `${url}${link.url}`

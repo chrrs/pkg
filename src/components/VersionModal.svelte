@@ -18,7 +18,7 @@
 		role="dialog"
 		class="fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center pointer-events-none"
 	>
-		<div class="bg-white pointer-events-auto max-w-xl flex-grow">
+		<div class="bg-white pointer-events-auto max-w-screen sm:max-w-xl flex-grow">
 			<div class="bg-gray-100 px-4 py-2">
 				<p><span class="font-semibold">{pack.artifact}</span> v{version.name}</p>
 			</div>

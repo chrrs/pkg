@@ -43,8 +43,7 @@
 	</div>
 </div>
 
-<!-- TODO: Fix this alignment -->
-<div class="max-w-[50rem] mx-auto">
+<div class="container-no-pad">
 	{#each results.results as result}
 		<a href="/pkg/{result.group}/{result.artifact}" class="block hover:bg-gray-100 px-4 py-4">
 			<p class="text-lg mb-1">
