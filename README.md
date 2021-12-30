@@ -1,4 +1,4 @@
-<center><img src="https://github.com/SlagHoedje/pkg/blob/master/static/logo.svg?raw=true" height="50" /></center>
+<center><img src=".github/banner.png" /></center>
 
 > Easy-to-use common maven repository index.
 
