@@ -64,6 +64,11 @@
 					{result.latestVersion.name}
 				</span>
 				{formatDistance(result.latestVersion.updated, new Date(), { addSuffix: true })}
+				{#if result.latestVersion.repository && result.latestVersion.repository.id !== 'maven_central'}
+					<span class="underline text-red-700">
+						{result.latestVersion.repository.name}
+					</span>
+				{/if}
 			</p>
 		</a>
 	{/each}
