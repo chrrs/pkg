@@ -48,8 +48,11 @@
 	<div class="container">
 		<div class="py-4">
 			<h1 class="text-3xl font-bold mb-1">{pack.name ?? pack.artifact}</h1>
-			<p class="text-sm text-gray-500 flex gap-4">
-				<span class="text-gray-700">{pack.group}:{pack.artifact}</span>
+			<p class="text-sm text-gray-500 flex flex-col sm:flex-row sm:gap-4">
+				<span>
+					<span class="sm:hidden">artifact: </span>
+					<span class="text-gray-700">{pack.group}:{pack.artifact}</span>
+				</span>
 				<span>
 					latest version: <span class="text-green-700 font-semibold">
 						{pack.latestVersion.name}
