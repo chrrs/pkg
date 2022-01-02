@@ -31,4 +31,11 @@ export interface PackageVersion {
 	name: string;
 	updated: number;
 	stable: boolean;
+	repository?: PackageRepository;
+}
+
+export interface PackageRepository {
+	name: string;
+	id: string;
+	url: string;
 }

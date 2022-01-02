@@ -22,6 +22,18 @@ export async function get(request: IncomingRequest): Promise<EndpointOutput> {
 			};
 		}
 
+		// TODO: This can probably be done in a better way.
+		// We need to make sure that the Maven Central repository is always found first.
+		const repositories = { maven_central: undefined };
+
+		res.repositories.forEach((repository) => {
+			repositories[repository.id] = {
+				name: repository.friendly_name,
+				id: repository.id,
+				url: repository.url,
+			};
+		});
+
 		return {
 			body: {
 				amount: res.packages.length,
@@ -34,6 +46,9 @@ export async function get(request: IncomingRequest): Promise<EndpointOutput> {
 						name: pack.latest_version.version,
 						updated: pack.latest_version.last_changed,
 						stable: pack.latest_version.stable,
+						repository:
+							pack.latest_version.repository_ids[0] &&
+							repositories[pack.latest_version.repository_ids[0]],
 					},
 				})),
 			},
