@@ -10,7 +10,7 @@
 {#if $navigating}
 	<div
 		out:fade={{ duration: 100 }}
-		in:fly={{ x: -1000, duration: 2000 }}
+		in:fly={{ x: -(window?.innerWidth ?? 1000), duration: 2000 }}
 		class="fixed bg-purple-500 w-full h-1"
 	/>
 {/if}
