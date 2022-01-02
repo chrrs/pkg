@@ -30,8 +30,11 @@ export async function get(request: IncomingRequest): Promise<EndpointOutput> {
 					description: pack.github?.description,
 					group: pack.group_id,
 					artifact: pack.artifact_id,
-					version: pack.latest_version?.version ?? '0',
-					lastUpdated: pack.latest_version?.last_changed ?? 0,
+					latestVersion: {
+						name: pack.latest_version.version,
+						updated: pack.latest_version.last_changed,
+						stable: pack.latest_version.stable,
+					},
 				})),
 			},
 		};

@@ -12,8 +12,7 @@ export interface SearchResult {
 	description?: string;
 	group: string;
 	artifact: string;
-	version: string;
-	lastUpdated: number;
+	latestVersion: PackageVersion;
 }
 
 export interface Package {
