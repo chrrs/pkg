@@ -27,7 +27,7 @@
 				class:text-green-700={version.stable}
 				class:text-red-700={!version.stable}
 			>
-				v{version.name}
+				{version.name}
 			</p>
 			<div class="flex-grow border-b-2 border-gray-100 group-hover:border-gray-200" />
 			<p class="text-gray-500">

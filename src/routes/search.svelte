@@ -60,8 +60,9 @@
 					class="font-semibold"
 					class:text-green-700={result.latestVersion.stable}
 					class:text-red-700={!result.latestVersion.stable}
-					>v{result.latestVersion.name}</span
 				>
+					{result.latestVersion.name}
+				</span>
 				{formatDistance(result.latestVersion.updated, new Date(), { addSuffix: true })}
 			</p>
 		</a>
