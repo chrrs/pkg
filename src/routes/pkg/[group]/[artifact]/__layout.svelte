@@ -23,6 +23,7 @@
 <script lang="ts">
 	import type { ApiError, Package } from '$lib/api_types';
 	import { page } from '$app/stores';
+	import { formatDistance } from 'date-fns';
 
 	export let pack: Package;
 
@@ -46,8 +47,26 @@
 <div class="bg-gray-100 mb-4">
 	<div class="container">
 		<div class="py-4">
-			<h1 class="text-3xl font-bold mb-2">{pack.name ?? pack.artifact}</h1>
-			{#if pack.description}<p class="text-gray-700">{pack.description}</p>{/if}
+			<h1 class="text-3xl font-bold mb-1">{pack.name ?? pack.artifact}</h1>
+			<p class="text-sm text-gray-500 flex gap-4">
+				<span class="text-gray-700">{pack.group}:{pack.artifact}</span>
+				<span>
+					latest version: <span class="text-green-700 font-semibold">
+						{pack.latestVersion.name}
+					</span>
+				</span>
+				<span>
+					last updated: <span class="text-gray-700">
+						{formatDistance(pack.latestVersion.updated, new Date(), {
+							addSuffix: true,
+						})}
+					</span>
+				</span>
+			</p>
+			{#if pack.description}
+				<div class="border-b border-gray-200 my-2" />
+				<p class="text-gray-700">{pack.description}</p>
+			{/if}
 		</div>
 		<div class="flex gap-4 overflow-x-auto">
 			{#each pages as link}
