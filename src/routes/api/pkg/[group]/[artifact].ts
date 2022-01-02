@@ -41,7 +41,7 @@ export async function get({
 				website: json.package.url,
 				group: json.package.group_id,
 				artifact: json.package.artifact_id,
-				repository: scm,
+				scm,
 				readme,
 				latestVersion: {
 					name: json.package.latest_version.version,

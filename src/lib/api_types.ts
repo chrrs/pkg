@@ -21,7 +21,7 @@ export interface Package {
 	website?: string;
 	group: string;
 	artifact: string;
-	repository?: string;
+	scm?: string;
 	readme?: string;
 	latestVersion: PackageVersion;
 	versions: PackageVersion[];

@@ -84,11 +84,10 @@
 					href="{url}{link.url}">{link.name}</a
 				>
 			{/each}
-			{#if pack.repository}
-				<a
-					class="inline-block text-gray-700 hover:underline px-4 py-1"
-					href={pack.repository}>Repository</a
-				>
+			{#if pack.scm}
+				<a class="inline-block text-gray-700 hover:underline px-4 py-1" href={pack.scm}>
+					Source code
+				</a>
 			{/if}
 			{#if pack.website}
 				<a class="inline-block text-gray-700 hover:underline px-4 py-1" href={pack.website}>
