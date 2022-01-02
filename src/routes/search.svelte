@@ -56,8 +56,13 @@
 			</p>
 			<p class="text-sm text-gray-500 flex gap-4">
 				<span class="text-gray-800">{result.group}:{result.artifact}</span>
-				<span class="text-green-700 font-semibold">v{result.version}</span>
-				{formatDistance(result.lastUpdated, new Date(), { addSuffix: true })}
+				<span
+					class="font-semibold"
+					class:text-green-700={result.latestVersion.stable}
+					class:text-red-700={!result.latestVersion.stable}
+					>v{result.latestVersion.name}</span
+				>
+				{formatDistance(result.latestVersion.updated, new Date(), { addSuffix: true })}
 			</p>
 		</a>
 	{/each}
