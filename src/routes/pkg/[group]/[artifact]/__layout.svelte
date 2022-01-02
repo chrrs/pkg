@@ -54,7 +54,11 @@
 					<span class="text-gray-700">{pack.group}:{pack.artifact}</span>
 				</span>
 				<span>
-					latest version: <span class="text-green-700 font-semibold">
+					latest version: <span
+						class="font-semibold"
+						class:text-green-700={pack.latestVersion.stable}
+						class:text-red-700={!pack.latestVersion.stable}
+					>
 						{pack.latestVersion.name}
 					</span>
 				</span>
