@@ -1,7 +1,7 @@
 import type { EndpointOutput, IncomingRequest } from '@sveltejs/kit';
 
 export async function get(request: IncomingRequest): Promise<EndpointOutput> {
-	if (!request.query.has('q')) {
+	if (!request.url['searchParams']?.has('q')) {
 		return {
 			status: 400,
 			body: { error: 'No search query specified.' },
@@ -11,7 +11,7 @@ export async function get(request: IncomingRequest): Promise<EndpointOutput> {
 	try {
 		const res = await fetch(
 			`https://package-search.services.jetbrains.com/api/package?onlyMpp=false&query=${encodeURIComponent(
-				request.query.get('q')
+				request.url['searchParams']?.get('q')
 			)}`
 		).then((res) => res.json());
 

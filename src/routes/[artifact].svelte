@@ -2,8 +2,8 @@
 	import type { ApiError, SearchResults } from '$lib/api_types';
 
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
-	export async function load({ page, fetch }: LoadInput): Promise<LoadOutput> {
-		const pack = page.params['artifact'];
+	export async function load({ params, fetch }: LoadInput): Promise<LoadOutput> {
+		const pack = params['artifact'];
 		if (pack.includes(':')) {
 			const [group, artifact] = pack.split(':');
 

@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
-	export async function load({ page, fetch }: LoadInput): Promise<LoadOutput> {
-		if (page.query.has('q')) {
-			const query = page.query.get('q');
+	export async function load({ url, fetch }: LoadInput): Promise<LoadOutput> {
+		if (url.searchParams.has('q')) {
+			const query = url.searchParams.get('q');
 			const res = (await fetch(`/api/search?q=${encodeURIComponent(query)}`).then((res) =>
 				res.json()
 			)) as SearchResults & ApiError;

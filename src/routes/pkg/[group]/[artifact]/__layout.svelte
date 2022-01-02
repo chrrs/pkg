@@ -1,13 +1,13 @@
 <script lang="ts" context="module">
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
-	export async function load({ page, fetch }: LoadInput): Promise<LoadOutput> {
-		const res = await fetch(`/api/pkg/${page.params.group}/${page.params.artifact}`);
+	export async function load({ params, fetch }: LoadInput): Promise<LoadOutput> {
+		const res = await fetch(`/api/pkg/${params.group}/${params.artifact}`);
 		const json = (await res.json()) as Package & ApiError;
 
 		if (res.status == 404) {
 			return {
 				status: 404,
-				error: `No artifact named ${page.params.group}:${page.params.artifact} found.`,
+				error: `No artifact named ${params.group}:${params.artifact} found.`,
 			};
 		} else if (json.error) {
 			throw json.error;
@@ -71,7 +71,7 @@
 		<div class="flex gap-4 overflow-x-auto">
 			{#each pages as link}
 				<a
-					class="inline-block px-4 py-1 {$page.path === `${url}${link.url}`
+					class="inline-block px-4 py-1 {$page.url.pathname === `${url}${link.url}`
 						? 'bg-white'
 						: 'text-gray-700 hover:underline'}"
 					href="{url}{link.url}">{link.name}</a

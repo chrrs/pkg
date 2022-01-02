@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
-	export async function load({ page }: LoadInput): Promise<LoadOutput> {
+	export async function load({ url }: LoadInput): Promise<LoadOutput> {
 		let query = '';
-		page.query.forEach((_, q) => (query += q));
+		url.searchParams.forEach((_, q) => (query += q));
 
 		if (query !== '') {
 			return {
