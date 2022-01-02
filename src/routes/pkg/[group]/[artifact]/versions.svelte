@@ -16,7 +16,7 @@
 	export let pack: Package;
 </script>
 
-<div class="container-no-pad mb-8">
+<div class="container-no-pad">
 	{#each pack.versions as version}
 		<button
 			class="w-full px-4 py-4 flex items-center gap-4 group hover:bg-gray-100"

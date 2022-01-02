@@ -18,7 +18,7 @@
 	$: readmeHtml = pack.readme && xss(marked(pack.readme));
 </script>
 
-<div class="container mb-8">
+<div class="container">
 	{#if readmeHtml}
 		<article>{@html readmeHtml}</article>
 	{:else}
