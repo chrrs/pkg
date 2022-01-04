@@ -1,4 +1,6 @@
 <script lang="ts" context="module">
+	import Meta from '$components/Meta.svelte';
+
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
 	export async function load({ url }: LoadInput): Promise<LoadOutput> {
 		let query = '';
@@ -15,6 +17,4 @@
 	}
 </script>
 
-<svelte:head>
-	<title>pkg</title>
-</svelte:head>
+<Meta title="pkg" />

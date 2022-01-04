@@ -24,6 +24,7 @@
 	import type { ApiError, Package } from '$lib/api_types';
 	import { page } from '$app/stores';
 	import { formatDistance } from 'date-fns';
+	import Meta from '$components/Meta.svelte';
 
 	export let pack: Package;
 
@@ -40,9 +41,10 @@
 	];
 </script>
 
-<svelte:head>
-	<title>{pack.name} - pkg</title>
-</svelte:head>
+<Meta
+	title="{pack.name ?? pack.artifact} - pkg"
+	description={pack.description ?? 'No description.'}
+/>
 
 <div class="bg-gray-100 mb-4">
 	<div class="container">

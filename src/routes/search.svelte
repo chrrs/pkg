@@ -27,14 +27,13 @@
 <script lang="ts">
 	import type { ApiError, SearchResults } from '$lib/api_types';
 	import { formatDistance } from 'date-fns';
+	import Meta from '$components/Meta.svelte';
 
 	export let query: string;
 	export let results: SearchResults;
 </script>
 
-<svelte:head>
-	<title>{query} - pkg</title>
-</svelte:head>
+<Meta title="{query} - pkg" />
 
 <div class="bg-gray-100 py-4 mb-4">
 	<div class="flex justify-between container">

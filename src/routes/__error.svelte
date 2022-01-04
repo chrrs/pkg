@@ -11,15 +11,14 @@
 
 <script lang="ts">
 	import Alert from '$components/Alert.svelte';
+	import Meta from '$components/Meta.svelte';
 	import type { ErrorLoadInput, LoadOutput } from '@sveltejs/kit';
 
 	export let status: number;
 	export let message: string;
 </script>
 
-<svelte:head>
-	<title>{status} - pkg</title>
-</svelte:head>
+<Meta title="{status} - pkg" />
 
 <div class="max-w-3xl mx-auto mb-8">
 	<Alert type="error"
