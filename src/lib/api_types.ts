@@ -23,6 +23,7 @@ export interface Package {
 	artifact: string;
 	scm?: string;
 	readme?: string;
+	javadoc?: string;
 	latestVersion: PackageVersion;
 	versions: PackageVersion[];
 }

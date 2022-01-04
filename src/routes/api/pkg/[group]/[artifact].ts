@@ -46,6 +46,15 @@ export async function get({
 			};
 		});
 
+		const latestRepository =
+			json.package.latest_version.repository_ids[0] &&
+			repositories[json.package.latest_version.repository_ids[0]];
+
+		const javadoc =
+			latestRepository?.id === 'maven_central'
+				? `https://www.javadoc.io/doc/${json.package.group_id}/${json.package.artifact_id}`
+				: undefined;
+
 		return {
 			body: {
 				name: json.package.name,
@@ -55,13 +64,12 @@ export async function get({
 				artifact: json.package.artifact_id,
 				scm,
 				readme,
+				javadoc,
 				latestVersion: {
 					name: json.package.latest_version.version,
 					updated: json.package.latest_version.last_changed,
 					stable: json.package.latest_version.stable,
-					repository:
-						json.package.latest_version.repository_ids[0] &&
-						repositories[json.package.latest_version.repository_ids[0]],
+					repository: latestRepository,
 				},
 				versions: json.package.versions.map((ver) => ({
 					name: ver.version,

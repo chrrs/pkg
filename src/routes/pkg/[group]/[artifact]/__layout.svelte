@@ -86,7 +86,7 @@
 					href="{url}{link.url}">{link.name}</a
 				>
 			{/each}
-			{#each [['Source code', pack.scm], ['Website', pack.website]] as link}
+			{#each [['Source code', pack.scm], ['Website', pack.website], ['Javadoc', pack.javadoc]] as link}
 				{#if link[1]}
 					<a class="inline-block text-gray-700 hover:underline px-4 py-1" href={link[1]}>
 						{link[0]}
