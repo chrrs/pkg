@@ -84,16 +84,18 @@
 					href="{url}{link.url}">{link.name}</a
 				>
 			{/each}
-			{#if pack.scm}
-				<a class="inline-block text-gray-700 hover:underline px-4 py-1" href={pack.scm}>
-					Source code
-				</a>
-			{/if}
-			{#if pack.website}
-				<a class="inline-block text-gray-700 hover:underline px-4 py-1" href={pack.website}>
-					Website
-				</a>
-			{/if}
+			{#each [['Source code', pack.scm], ['Website', pack.website]] as link}
+				{#if link[1]}
+					<a class="inline-block text-gray-700 hover:underline px-4 py-1" href={link[1]}>
+						{link[0]}
+						<img
+							class="inline-block w-4 h-4 ml-1 align-sub opacity-25"
+							src="/link.svg"
+							alt="Link"
+						/>
+					</a>
+				{/if}
+			{/each}
 		</div>
 	</div>
 </div>
