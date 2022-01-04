@@ -2,8 +2,8 @@
 
 > Easy-to-use common maven repository index.
 
-![Version](https://img.shields.io/github/package-json/v/SlagHoedje/pkg?style=flat-square)
-![Lints](https://img.shields.io/github/checks-status/SlagHoedje/pkg/master?style=flat-square)
+![Version](https://img.shields.io/github/package-json/v/chrrs/pkg?style=flat-square)
+![Lints](https://img.shields.io/github/checks-status/chrrs/pkg/master?style=flat-square)
 ![Deployment](https://img.shields.io/badge/deployed%20on-vercel-black?style=flat-square)
 
 Finding maven packages is hard. Sure, sites like [mvnrepository](https://mvnrepository.com) and the official [maven search](https://search.maven.org) exist, but all of them are either very messy, or don't provide enough information. That's why I decided to build my own repository explorer.
