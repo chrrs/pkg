@@ -34,6 +34,18 @@ export async function get({
 				(readmeContentUrl && (await getContent(readmeContentUrl)));
 		}
 
+		// TODO: This can probably be done in a better way.
+		// We need to make sure that the Maven Central repository is always found first.
+		const repositories = { maven_central: undefined };
+
+		json.repositories.forEach((repository) => {
+			repositories[repository.id] = {
+				name: repository.friendly_name,
+				id: repository.id,
+				url: repository.url,
+			};
+		});
+
 		return {
 			body: {
 				name: json.package.name,
@@ -47,6 +59,9 @@ export async function get({
 					name: json.package.latest_version.version,
 					updated: json.package.latest_version.last_changed,
 					stable: json.package.latest_version.stable,
+					repository:
+						json.package.latest_version.repository_ids[0] &&
+						repositories[json.package.latest_version.repository_ids[0]],
 				},
 				versions: json.package.versions.map((ver) => ({
 					name: ver.version,

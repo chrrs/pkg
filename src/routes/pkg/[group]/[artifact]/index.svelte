@@ -19,6 +19,16 @@
 </script>
 
 <div class="container">
+	{#if pack.latestVersion.repository.id !== 'maven_central'}
+		<Alert type="info">
+			The latest version of this package is stored in an alternative repository. (<a
+				class="underline"
+				href={pack.latestVersion.repository.url}>{pack.latestVersion.repository.name}</a
+			>)
+		</Alert>
+		<div class="mb-2" />
+	{/if}
+
 	{#if readmeHtml}
 		<article>{@html readmeHtml}</article>
 	{:else}
