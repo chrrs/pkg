@@ -77,7 +77,7 @@
 				<p class="text-gray-700">{pack.description}</p>
 			{/if}
 		</div>
-		<div class="flex gap-4 overflow-x-auto">
+		<div class="flex flex-wrap-reverse gap-x-4">
 			{#each pages as link}
 				<a
 					class="inline-block px-4 py-1 {$page.url.pathname === `${url}${link.url}`
