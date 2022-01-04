@@ -38,20 +38,11 @@
 		h5,
 		h6 {
 			a {
-				&:hover {
-					background: linear-gradient(
-						180deg,
-						transparent 90%,
-						theme('colors.purple.400') 0
-					);
-				}
+				@apply text-purple-600 hover:underline;
 
-				& > code:hover {
-					@apply underline;
+				& > code {
+					@apply text-purple-600;
 				}
-
-				@apply font-semibold;
-				background: linear-gradient(180deg, transparent 90%, theme('colors.purple.200') 0);
 			}
 
 			strong,
