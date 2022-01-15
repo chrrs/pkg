@@ -9,7 +9,7 @@ export const managers: Manager[] = [
 	{
 		name: 'build.gradle.kts',
 		transform: (pack: Package, version: PackageVersion) =>
-			`implementation('${pack.group}:${pack.artifact}:${version.name}')`,
+			`implementation("${pack.group}:${pack.artifact}:${version.name}")`,
 	},
 	{
 		name: 'build.gradle',
